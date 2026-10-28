@@ -1,27 +1,26 @@
 public class MissingChar {
+
     public static String missingChar(String str, int n) {
         String front = str.substring(0, n);
         String back = str.substring(n + 1);
         return front + back;
     }
 
+    public static void testMissingChar(String str, int n, String expected) {
+        String result = missingChar(str, n);
+
+        System.out.print("str: " + str + " n:" + n + " expected: " + expected+ "result: " + result);
+
+        if (result.equals(expected)) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+
     public static void main(String[] args) {
-        if (missingChar("kitten", 1).equals("ktten")) {
-            System.out.println("Test 1: PASS");
-        } else {
-            System.out.println("Test 1: FAIL");
-        }
-
-        if (missingChar("kitten", 0).equals("itten")) {
-            System.out.println("Test 2: PASS");
-        } else {
-            System.out.println("Test 2: FAIL");
-        }
-
-        if (missingChar("kitten", 4).equals("kittn")) {
-            System.out.println("Test 3: PASS");
-        } else {
-            System.out.println("Test 3: FAIL");
-        }
+        testMissingChar("kitten", 1, "ktten");
+        testMissingChar("kitten", 0, "itten");
+        testMissingChar("kitten", 4, "kittn");
     }
 }
