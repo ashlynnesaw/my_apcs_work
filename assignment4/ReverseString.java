@@ -1,26 +1,25 @@
 public class ReverseString {
+
     public static String reverse(String str) {
         StringBuilder sb = new StringBuilder(str);
         return sb.reverse().toString();
     }
 
+    public static void testReverse(String str, String expected) {
+        String result = reverse(str);
+
+        System.out.print("str:" + str + " expected:" + expected + " result:" + result + " ");
+
+        if (result.equals(expected)) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+
     public static void main(String[] args) {
-        if (reverse("bad").equals("dab")) {
-            System.out.println("Test 1: PASS");
-        } else {
-            System.out.println("Test 1: FAIL");
-        }
-
-        if (reverse("Hello, world!").equals("!dlrow ,olleH")) {
-            System.out.println("Test 2: PASS");
-        } else {
-            System.out.println("Test 2: FAIL");
-        }
-
-        if (reverse("tacocat").equals("tacocat")) {
-            System.out.println("Test 3: PASS");
-        } else {
-            System.out.println("Test 3: FAIL");
-        }
+        testReverse("bad", "dab");
+        testReverse("Hello, world!", "!dlrow ,olleH");
+        testReverse("tacocat", "tacocat");
     }
 }

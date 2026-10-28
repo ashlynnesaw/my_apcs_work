@@ -1,4 +1,5 @@
 public class CountOccurrences {
+
     public static int countOccurrences(String str, String sub) {
         if (sub.length() == 0) return 0;
         int count = 0;
@@ -10,23 +11,21 @@ public class CountOccurrences {
         return count;
     }
 
+    public static void testCountOccurrences(String str, String sub, int expected) {
+        int result = countOccurrences(str, sub);
+
+        System.out.print("str:" + str + " sub:" + sub + " expected:" + expected + " result:" + result + " ");
+
+        if (result == expected) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+
     public static void main(String[] args) {
-        if (countOccurrences("Mississippi", "iss") == 2) {
-            System.out.println("Test 1: PASS");
-        } else {
-            System.out.println("Test 1: FAIL");
-        }
-
-        if (countOccurrences("banananana", "na") == 4) {
-            System.out.println("Test 2: PASS");
-        } else {
-            System.out.println("Test 2: FAIL");
-        }
-
-        if (countOccurrences("hello world", "l") == 3) {
-            System.out.println("Test 3: PASS");
-        } else {
-            System.out.println("Test 3: FAIL");
-        }
+        testCountOccurrences("Mississippi", "iss", 2);
+        testCountOccurrences("banananana", "na", 4);
+        testCountOccurrences("hello world", "l", 3);
     }
 }

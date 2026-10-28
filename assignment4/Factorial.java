@@ -1,4 +1,5 @@
 public class Factorial {
+
     public static int factorial(int n) {
         int result = 1;
         for (int i = 2; i <= n; i++) {
@@ -7,23 +8,21 @@ public class Factorial {
         return result;
     }
 
+    public static void testFactorial(int n, int expected) {
+        int result = factorial(n);
+
+        System.out.print("n:" + n + " expected:" + expected + " result:" + result + " ");
+
+        if (result == expected) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+
     public static void main(String[] args) {
-        if (factorial(0) == 1) {
-            System.out.println("Test 1: PASS");
-        } else {
-            System.out.println("Test 1: FAIL");
-        }
-
-        if (factorial(3) == 6) {
-            System.out.println("Test 2: PASS");
-        } else {
-            System.out.println("Test 2: FAIL");
-        }
-
-        if (factorial(5) == 120) {
-            System.out.println("Test 3: PASS");
-        } else {
-            System.out.println("Test 3: FAIL");
-        }
+        testFactorial(0, 1);
+        testFactorial(3, 6);
+        testFactorial(5, 120);
     }
 }
