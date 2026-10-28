@@ -1,6 +1,10 @@
 public class CoinFlip {
     public static String flipCoin() {
-        return Math.random() < 0.5 ? "Heads" : "Tails";
+        if (Math.random() < 0.5) {
+            return "Heads";
+        } else {
+            return "Tails";
+        }
     }
 
     public static void main(String[] args) {
