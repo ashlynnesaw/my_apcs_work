@@ -1,28 +1,24 @@
 public class Store {
 
-    public boolean goodDeal(double ogPrice, double salePrice) {
+    public static boolean goodDeal(double ogPrice, double salePrice) {
         return salePrice < ogPrice * 0.75;
     }
 
+    public static void testGoodDeal(double ogPrice, double salePrice, boolean expected) {
+        boolean result = goodDeal(ogPrice, salePrice);
+
+        System.out.print("ogPrice:" + ogPrice + " salePrice:" + salePrice + " expected:" + expected + " result:" + result + " ");
+
+        if (result == expected) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+
     public static void main(String[] args) {
-        Store store = new Store();
-        
-        if (store.goodDeal(100, 70) == true) {
-            System.out.println("Test 1: PASS");
-        } else {
-            System.out.println("Test 1: FAIL");
-        }
-        
-        if (store.goodDeal(100, 80) == false) {
-            System.out.println("Test 2: PASS");
-        } else {
-            System.out.println("Test 2: FAIL");
-        }
-        
-        if (store.goodDeal(50, 35) == true) {
-            System.out.println("Test 3: PASS");
-        } else {
-            System.out.println("Test 3: FAIL");
-        }
+        testGoodDeal(100, 70, true);
+        testGoodDeal(100, 80, false);
+        testGoodDeal(50, 35, true);
     }
 }

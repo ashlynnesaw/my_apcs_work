@@ -1,37 +1,32 @@
-public class CodingBatDiff21{
-	public static int diff21(int n) {
-	if(n <= 21) {
-		return Math.abs(n - 21);
-	} else {
-		return (n - 21) * 2;
-		}
-	}
-	public static void testDiff21(int n, int expected){
-		int actual = diff21(n);
-		if (actual == expected){
-			System.out.println("diff21(" + n + ") -> Expected: " + expected + ", Got: " + actual + " PASS");
-			} else {
-				System.out.println("diff21(" + n + ") -> Expected: " + expected + ", Got: " + actual + " FAIL");
-				}
-		}
-	
-	public static void main(String[] args){
-if (diff21(19) == 2) {
-            System.out.println("Test 1: PASS");
-        } else {
-            System.out.println("Test 1: FAIL");
-        }
+public class CodingBatDiff21 {
 
-        if (diff21(10) == 11) {
-            System.out.println("Test 2: PASS");
+    public static int diff21(int n) {
+        if (n <= 21) {
+            return Math.abs(n - 21);
         } else {
-            System.out.println("Test 2: FAIL");
+            return (n - 21) * 2;
         }
+    }
 
-        if (diff21(21) == 0) {
-            System.out.println("Test 3: PASS");
+    public static void testDiff21(int n, int expected) {
+        int result = diff21(n);
+
+        System.out.print("n:" + n + " expected:" + expected + " result:" + result + " ");
+
+        if (result == expected) {
+            System.out.println("PASS");
         } else {
-            System.out.println("Test 3: FAIL");
+            System.out.println("FAIL");
         }
-	}
+    }
+
+    public static void main(String[] args) {
+        testDiff21(19, 2);
+        testDiff21(10, 11);
+        testDiff21(21, 0);
+        testDiff21(22, 2);
+        testDiff21(25, 8);
+        testDiff21(-1, 22);
+        testDiff21(-2, 23);
+    }
 }
