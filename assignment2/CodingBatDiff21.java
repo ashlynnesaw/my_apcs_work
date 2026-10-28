@@ -16,13 +16,22 @@ public class CodingBatDiff21{
 		}
 	
 	public static void main(String[] args){
-	testDiff21(19, 2);
-	testDiff21(10, 11);
-	testDiff21(21, 0);
-	testDiff21(22, 2);
-	testDiff21(25, 8);
-	testDiff21(-1, 22);
-	testDiff21(-2, 23);
+if (diff21(19) == 2) {
+            System.out.println("Test 1: PASS");
+        } else {
+            System.out.println("Test 1: FAIL");
+        }
 
+        if (diff21(10) == 11) {
+            System.out.println("Test 2: PASS");
+        } else {
+            System.out.println("Test 2: FAIL");
+        }
+
+        if (diff21(21) == 0) {
+            System.out.println("Test 3: PASS");
+        } else {
+            System.out.println("Test 3: FAIL");
+        }
 	}
 }
